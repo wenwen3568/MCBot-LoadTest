@@ -26,11 +26,10 @@
     </repositories>
 
     <dependencies>
-        <!-- 使用较旧的稳定版本，兼容你的代码 -->
         <dependency>
             <groupId>com.github.steveice10</groupId>
             <artifactId>mcprotocollib</artifactId>
-            <version>1.18.2-1</version>   <!-- 或 1.18-3, 1.19.2-1 -->
+            <version>1.19.2-1</version>
         </dependency>
     </dependencies>
 
