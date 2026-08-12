@@ -18,19 +18,30 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!-- 添加两个仓库：OpenCollab 作为备用，JitPack 作为主要 -->
     <repositories>
+        <!-- OpenCollab 可能包含一些依赖，但 MCProtocolLib 有时版本不全 -->
         <repository>
             <id>opencollab-releases</id>
             <url>https://repo.opencollab.dev/maven-releases/</url>
         </repository>
+        <!-- JitPack 能够构建 GitHub 上的任意标签，推荐用于 MCProtocolLib -->
+        <repository>
+            <id>jitpack</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
+        <!-- 使用 JitPack 方式引入 MCProtocolLib -->
+        <!-- groupId 为 com.github.作者名，artifactId 为项目名（注意大小写） -->
+        <!-- version 使用你需要的 Minecraft 版本标签，例如 1.20.2，或特定 commit -->
         <dependency>
-            <groupId>com.github.steveice10</groupId>
-            <artifactId>mcprotocollib</artifactId>
-            <version>1.19.4-1</version>
+            <groupId>com.github.Steveice10</groupId>
+            <artifactId>MCProtocolLib</artifactId>
+            <version>1.20.2</version>   <!-- 如果需要其他版本，可改为 1.20.4, 1.21 等 -->
         </dependency>
+        <!-- 如果还需要其他依赖（如事件总线等），通常 MCProtocolLib 会自动引入 -->
     </dependencies>
 
     <build>
@@ -43,7 +54,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>LoadTestTool</mainClass>
+                            <mainClass>LoadTestTool</mainClass>   <!-- 你的主类 -->
                         </manifest>
                     </archive>
                     <descriptorRefs>
