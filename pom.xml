@@ -18,30 +18,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- 只使用 OpenCollab 仓库（包含所有稳定版本） -->
     <repositories>
         <repository>
             <id>opencollab-releases</id>
             <url>https://repo.opencollab.dev/maven-releases/</url>
         </repository>
-        <!-- 如果以后需要快照版本，可取消下面注释 -->
-        <!--
-        <repository>
-            <id>opencollab-snapshots</id>
-            <url>https://repo.opencollab.dev/maven-snapshots/</url>
-        </repository>
-        -->
     </repositories>
 
     <dependencies>
-        <!-- MCProtocolLib 的正确坐标（基于截图中的目录） -->
+        <!-- 使用较旧的稳定版本，兼容你的代码 -->
         <dependency>
             <groupId>com.github.steveice10</groupId>
             <artifactId>mcprotocollib</artifactId>
-            <version>1.20.2-1</version>   <!-- 支持 Minecraft 1.20.2 -->
-            <!-- 如需其他版本，可改为 1.20.4-1、1.19.4-1 等 -->
+            <version>1.18.2-1</version>   <!-- 或 1.18-3, 1.19.2-1 -->
         </dependency>
-        <!-- 其他依赖（如果有）可以在此添加 -->
     </dependencies>
 
     <build>
@@ -54,7 +44,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>LoadTestTool</mainClass>   <!-- 请确认你的主类名 -->
+                            <mainClass>LoadTestTool</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
